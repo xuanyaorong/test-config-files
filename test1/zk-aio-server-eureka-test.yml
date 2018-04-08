@@ -15,4 +15,4 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
 logging:
-  path: E:/workspace_idea/cmp1.0/log/yk-cmp-server-eureka
+  path: D:\\log\\zk-aio-server
