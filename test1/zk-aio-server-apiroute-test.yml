@@ -36,4 +36,4 @@ zuul:
     user:
       path: /user/**
       strPrefix: true
-      serviceId: yk-cmp-server-user
+      serviceId: zk-aio-server-demo
