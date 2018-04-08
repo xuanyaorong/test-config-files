@@ -1,1 +1,18 @@
-11111111111
+#服务端口
+server:
+  port: 5006
+#========================服务本身的配置==========================
+eureka:
+  instance:
+    hostname: localhost
+  server:
+    enable-self-preservation: false #（设为false，关闭自我保护主要）
+    eviction-interval-timer-in-ms: 4000 # 清理间隔（单位毫秒，默认是60*1000）
+  client:
+    registerWithEureka: false #自己本身不注册
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+logging:
+  path: E:/workspace_idea/cmp1.0/log/yk-cmp-server-eureka
