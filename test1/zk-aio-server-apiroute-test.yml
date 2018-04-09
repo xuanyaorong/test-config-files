@@ -30,6 +30,6 @@ logging:
 zuul:
   routes:
     user:
-      path: /user/**
+      path: /api-demo/**
       strPrefix: true
       serviceId: zk-aio-server-demo
