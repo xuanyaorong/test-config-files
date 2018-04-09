@@ -1,0 +1,52 @@
+#应用端口
+server:
+  port: 8000
+  tomcat:
+    max-threads: 800
+    uri-encoding: UTF-8
+# 日志
+logging:
+  path: D://logs
+
+#数据库
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/new_erp?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+
+#数据库连接池
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,log4j
+    connectionPropertiesdruid: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    
+  aop:
+    proxy-target-class: true
+
+  http:
+    multipart:
+      maxFileSize: 10Mb
+      maxRequestSize: 100Mb
+
+# mybatis 配置
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.aio.demo.entity
+  configuration:
+    call-setters-on-nulls: true
+  mappers: com.aio.core.mybatis.CommonMapper
+  not-empty: false
+  identity: MYSQL
