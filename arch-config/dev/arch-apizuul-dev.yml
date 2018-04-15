@@ -1,0 +1,8 @@
+server:
+  port: 9999
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG                    #日志级别
+  file: D:/logs/zhongka-${sys.env}/${spring.application.name}.log  #日志地址
