@@ -6,13 +6,6 @@ logging:
       springframework:
         web: DEBUG                    #日志级别
   file: D:/logs/zhongka-${sys.env}/${spring.application.name}.log  #日志地址
-#=======api网关的配置======================
-zuul:
-  routes:
-    user:
-      path: /api-demo/**
-      strPrefix: true
-      serviceId: zk-aio-server-demo
 #开启健康检查（需要spring-boot-starter-actuator依赖）
 eureka:
   client:
@@ -26,3 +19,10 @@ eureka:
 #租期到期时间（默认90秒）
 #服务失效时间。默认是90秒，也就是如果Eureka Server在90秒内没有接收到来自Service Provider的Renew操作，就会把Service Provider剔除。
     lease-expiration-duration-in-seconds: 10
+#=======api网关的配置======================
+zuul:
+  routes:
+    user:
+      path: /erp/**
+      strPrefix: true
+      serviceId: biz-erp
